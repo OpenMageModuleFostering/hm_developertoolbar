@@ -1,13 +1,13 @@
 {
     "name": "OpenMageModuleFostering/HM_DeveloperToolbar",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "Free",
     "homepage": "",
-    "description": "DeveloperToolbar",
+    "description": "Magento Developer Toolbar",
     "authors": [
     {
-        "name": "Hai NGUYEN",
-        "email": "haint@hello-magento.com"
+        "name": "Mage World",
+        "email": "haint@mage-world.com"
     }
 ],
     "suggest": {
