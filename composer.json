@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/HM_DeveloperToolbar",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "DeveloperToolbar",
+    "authors": [
+    {
+        "name": "Hai NGUYEN",
+        "email": "haint@hello-magento.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
