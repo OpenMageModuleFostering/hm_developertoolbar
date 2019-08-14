@@ -73,10 +73,10 @@
     </stores>
 	<default>
 		<dev>
-			<config>
-				<enabled>1</enabled>
+			<offline>
+				<mwdevtoolbar>1</mwdevtoolbar>
 				
-			</config>
+			</offline>
 		</dev>
 		
 		<web>
@@ -85,8 +85,9 @@
             </routers>
 		</web>
 		<dev>
-			<config>
-                <enabled_offline>0</enabled_offline>
+			<offline>
+                <enable>0</enable>
+                <reminder>0</reminder>
 				<message><![CDATA[
 <style>
 body {
@@ -121,7 +122,7 @@ h2 {
 </body>
  ]]>
 				</message> 
-			</config>
+			</offline>
 		</dev>
 	</default>
 </config>

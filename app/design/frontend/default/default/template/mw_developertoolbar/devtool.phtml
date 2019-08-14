@@ -1,5 +1,5 @@
 <?php
-	$active = Mage::getStoreConfig("dev/config/enabled");
+	$active = Mage::getStoreConfig("dev/offline/mwdevtoolbar");
 	$helper = Mage::helper('developertoolbar/data');
     if($helper->checkAllowsIps() == 0){
     	$active = 0;
@@ -252,18 +252,18 @@
 		<?php }?>	
 
 		<!-- template store offline -->
-		<?php  if (Mage::getStoreConfig('dev/config/enabled_offline') != '1') {?>
+		<?php  if (Mage::getStoreConfig('dev/offline/enable') != '1') {?>
 			<div class="store_all">
 			<span class ="seperate_vertical_devtool">Store Offline:</span>
 			<span class = "en_dis">Disabled</span>
-			<span class = "en_dis">(<a href="<?php echo $this->getUrl('developertoolbar/index/storeoffline/enabled/'.(Mage::getStoreConfig('dev/config/enabled_offline')!='1'?1:0)) ?>">Enable</a>)</span>
+			<span class = "en_dis">(<a href="<?php echo $this->getUrl('developertoolbar/index/storeoffline/enabled/'.(Mage::getStoreConfig('dev/offline/enable')!='1'?1:0)) ?>">Enable</a>)</span>
 			</div>	
 			<div class="clear_both"><span></span></div>
 		<?php } else {?>
 			<div class="store_all">
 			<span class ="seperate_vertical_devtool">Store Offline:</span>
 			<span class = "en_dis">Enabled</span>
-			<span class = "en_dis">(<a  href="<?php echo $this->getUrl('developertoolbar/index/storeoffline/enabled/'.(Mage::getStoreConfig('dev/config/enabled_offline')!='1'?1:0)) ?>">Disable</a>)</span>
+			<span class = "en_dis">(<a  href="<?php echo $this->getUrl('developertoolbar/index/storeoffline/enabled/'.(Mage::getStoreConfig('dev/offline/enable')!='1'?1:0)) ?>">Disable</a>)</span>
 			</div>	
 			<div class="clear_both"><span></span></div>
 		<?php }?>

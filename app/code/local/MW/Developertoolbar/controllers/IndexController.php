@@ -1,22 +1,26 @@
 <?php
 class MW_Developertoolbar_IndexController extends Mage_Core_Controller_Front_Action
 {
-    public function storeofflineAction(){
-		$enabled = $this->getRequest()->getParam('enabled');	
-		Mage::getConfig()->saveConfig('dev/config/enabled_offline', $enabled);
-		Mage::getConfig()->saveConfig('dev/config/showreminder', $enabled);
-		
-    	Mage::app()->cleanCache();
-
+	public function storeofflineAction(){
+    	$active = Mage::getStoreConfig("dev/offline/mwdevtoolbar");
+    	if($active == 1){
+			$enabled = $this->getRequest()->getParam('enabled');	
+			$scope = 'stores';
+			$scope_id = Mage::app()->getStore()->getStoreId();
+			
+			Mage::getConfig()->saveConfig('dev/offline/enable', $enabled, $scope, $scope_id);
+			Mage::getConfig()->saveConfig('dev/offline/reminder', $enabled, $scope, $scope_id);			
+	    	Mage::app()->cleanCache();
+    	}
 		$this->_redirectReferer();
 	}
+	
 	public function hintsAction()
     {        
     	$helper = Mage::helper('developertoolbar/data');
     	if($helper->checkAllowsIps() > 0){
 			$enabled = $this->getRequest()->getParam('enabled');
-			$type = $this->getRequest()->getParam('type');
-			
+			$type = $this->getRequest()->getParam('type');			
 			$scope = $type === 'front' ? 'stores' : 'default';
 			$scope_id = $type === 'front' ? Mage::app()->getStore()->getStoreId() : '0';
 			Mage::getConfig()->saveConfig('dev/debug/template_hints', $enabled, $scope, $scope_id);
