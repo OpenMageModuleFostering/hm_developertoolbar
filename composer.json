@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/HM_DeveloperToolbar",
+    "name": "OpenMageModuleFostering\/HM_DeveloperToolbar",
     "type": "magento-module",
     "license": "Free",
     "homepage": "",
     "description": "Magento Developer Toolbar",
     "authors": [
-    {
-        "name": "Mage World",
-        "email": "haint@mage-world.com"
-    }
-],
+        {
+            "name": "Mage World",
+            "email": "haint@mage-world.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
